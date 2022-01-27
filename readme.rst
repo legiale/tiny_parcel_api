@@ -1,70 +1,53 @@
 ###################
-What is CodeIgniter
+Overview
+###################
+Tiny Parcel APIs
+Services to store parcel quote requests and calculate estimated delivery prices for customers.
+
+I use CodeIgniter 3.11 because it's not too big and enough for providing all things i need to accomplish this project.
+
+I use MySQL with structure as shown in sql seed file and it runs on the same server.
+
+###################
+Demo 
+###################
+https://dreamylgl.dev/
+
+The credentials for making auth request /login is { "username" : "test1", "password" : "test1"}
+
+Then the reponse's token must be included in all other requests.
+
+###################
+Setup 
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Download the setup and then config & import MySQL database via the seed tiny_parcel_db.sql
 
-*******************
-Release Information
-*******************
+You can use POSTMAN or anything else for simulate frontend.
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+There is a Postman iport file tiny_parcel.postman_collection.json  
 
-**************************
-Changelog and New Features
-**************************
+###################
+Test the APIs
+###################
+You can test the APIs by including header Content-Type & Auth-Key with value application/json & "tiny_parcel_auth" in every requests.
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+And for API except login you must include id & token that you get after successfully login. 
 
-*******************
-Server Requirements
-*******************
+The header keys are 'User-ID' for customer id & 'Authorization' for the token.
 
-PHP version 5.6 or newer is recommended.
+List of the API :
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+[POST] /auth/login  json { "username" : "test1", "password" : "test1"}
 
-************
-Installation
-************
+[GET] /parcels/:id
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+[POST] /parcels/
 
-*******
-License
-*******
+[PUT] /parcels/:id   json { "parcel_name" : "parcel 1", "parcel_weight" : "1", "parcel_volume": "1", "parcel_declared_value":"1000"}
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+[DELETE] /parcels/:id
 
-*********
-Resources
-*********
+[GET] /prices?parcelIds=11,13,20,29,45,22,55,99
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+[POST] /auth/logout
