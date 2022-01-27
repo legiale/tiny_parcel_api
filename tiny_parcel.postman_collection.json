@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "2d11ec0b-43df-42e4-bf5b-3f78c5870d5d",
+		"name": "tiny_parcel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Key",
+						"value": "tiny_parcel_auth",
+						"type": "text"
+					},
+					{
+						"key": "User-ID",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "e15c2da6059a789d2dff00d1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "legiale",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "legialele",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://dreamylgl.dev/auth/logout",
+					"protocol": "https",
+					"host": [
+						"dreamylgl",
+						"dev"
+					],
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Key",
+						"value": "tiny_parcel_auth",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "legiale",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "legialele",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://dreamylgl.dev/auth/login",
+					"protocol": "https",
+					"host": [
+						"dreamylgl",
+						"dev"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create parcel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "69c1ed329e0eb44050378a17211d4444"
+					},
+					{
+						"key": "User-ID",
+						"type": "text",
+						"value": "1"
+					},
+					{
+						"key": "Auth-Key",
+						"type": "text",
+						"value": "tiny_parcel_auth"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "parcel_name",
+							"value": "new parcel 4",
+							"type": "text"
+						},
+						{
+							"key": "parcel_weight",
+							"value": "334",
+							"type": "text"
+						},
+						{
+							"key": "parcel_volume",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "parcel_declared_value",
+							"value": "44",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://dreamylgl.dev/parcels",
+					"protocol": "https",
+					"host": [
+						"dreamylgl",
+						"dev"
+					],
+					"path": [
+						"parcels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit parcel",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "69c1ed329e0eb44050378a17211d4444"
+					},
+					{
+						"key": "User-ID",
+						"type": "text",
+						"value": "1"
+					},
+					{
+						"key": "Auth-Key",
+						"type": "text",
+						"value": "tiny_parcel_auth"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"parcel_name\":\"ble ble ble\",\n\t\"parcel_weight\":2211,\n\t\"parcel_volume\":22,\n\t\"parcel_declared_value\":1222\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dreamylgl.dev/parcels/5",
+					"protocol": "https",
+					"host": [
+						"dreamylgl",
+						"dev"
+					],
+					"path": [
+						"parcels",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete parcel",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "69c1ed329e0eb44050378a17211d4444"
+					},
+					{
+						"key": "User-ID",
+						"type": "text",
+						"value": "1"
+					},
+					{
+						"key": "Auth-Key",
+						"type": "text",
+						"value": "tiny_parcel_auth"
+					}
+				],
+				"url": {
+					"raw": "https://dreamylgl.dev/parcels/4",
+					"protocol": "https",
+					"host": [
+						"dreamylgl",
+						"dev"
+					],
+					"path": [
+						"parcels",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get parcel",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "69c1ed329e0eb44050378a17211d4444"
+					},
+					{
+						"key": "User-ID",
+						"type": "text",
+						"value": "1"
+					},
+					{
+						"key": "Auth-Key",
+						"type": "text",
+						"value": "tiny_parcel_auth"
+					}
+				],
+				"url": {
+					"raw": "https://dreamylgl.dev/parcels/7",
+					"protocol": "https",
+					"host": [
+						"dreamylgl",
+						"dev"
+					],
+					"path": [
+						"parcels",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get prices",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "69c1ed329e0eb44050378a17211d4444"
+					},
+					{
+						"key": "User-ID",
+						"type": "text",
+						"value": "1"
+					},
+					{
+						"key": "Auth-Key",
+						"type": "text",
+						"value": "tiny_parcel_auth"
+					}
+				],
+				"url": {
+					"raw": "https://dreamylgl.dev/tiny_parcel_api/prices?parcelIds=11,2,3,4,5,6,12",
+					"protocol": "https",
+					"host": [
+						"dreamylgl",
+						"dev"
+					],
+					"path": [
+						"tiny_parcel_api",
+						"prices"
+					],
+					"query": [
+						{
+							"key": "parcelIds",
+							"value": "11,2,3,4,5,6,12"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

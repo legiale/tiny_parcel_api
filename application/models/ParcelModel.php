@@ -39,10 +39,10 @@ class ParcelModel extends CI_Model {
 
 		$res =  $this->db->insert('parcels', $this);
 		if(!$res){
-			return array('status' => 500,'message' => 'Internal server error.');
+			return array('status' => 500,'message' => 'Internal server error.', 'inserted_id' => $res);
 		}
 
-		return array('status' => 201,'message' => 'Parcel data has been saved.');
+		return array('status' => 201,'message' => 'Parcel data has been saved.' , 'inserted_id' => $res);
 	}
 
 	public function get_parcel( int $customer_id, int $parcel_id = null) : array{

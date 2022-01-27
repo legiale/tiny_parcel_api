@@ -9,6 +9,26 @@ class AuthenticationController extends CI_Controller {
 		$this->load->model('AuthModel','authenticator');
 	}
 
+	public function index(){
+		echo "Tiny Parcel services. Please make your requests! <br/>";
+		print_r("<pre>") ;
+		print_r("* Create, Read, Update and Delete for parcel(s): 
+
+GET /parcels/{id}
+
+POST /parcels/
+
+PUT /parcels/{id}
+
+DELETE /parcels/{id}
+
+* GET delivery price of (one or up to twenty) parcels -  request a single bulk price for all of them.
+
+GET /prices");
+		print_r("</pre>");;
+		die();
+	}
+
 	public function login()
 	{
 		$request_method = $_SERVER['REQUEST_METHOD'];
