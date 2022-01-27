@@ -25,7 +25,7 @@ Download the setup and then config & import MySQL database via the seed tiny_par
 
 You can use POSTMAN or anything else for simulate frontend.
 
-There is a Postman iport file tiny_parcel.postman_collection.json  
+There is a Postman import file in the root folder tiny_parcel.postman_collection.json  
 
 ###################
 Test the APIs
